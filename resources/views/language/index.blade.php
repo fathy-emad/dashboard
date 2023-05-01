@@ -25,10 +25,7 @@
                                     <i class="ti ti-reload"></i>
                                 </a>
 
-                                <a href="{{ route('language.edit', $language) }}" class="btn btn-icon"
-                                    title="{{ __('Edit') }}" data-bs-toggle="tooltip" data-bs-placement="bottom">
-                                    <i class="ti ti-edit"></i>
-                                </a>
+                                <x-components::crud.edit :url="route('language.edit', $language)" />
                             </div>
                         </td>
                     </tr>

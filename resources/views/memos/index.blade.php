@@ -22,22 +22,9 @@
                             <td>{{ $memo->title }}</td>
                             <td>
                                 <div class="d-flex gap-1">
-                                    <a href="{{ route('memos.show', $memo) }}" class="btn btn-icon">
-                                        <i class="ti ti-eye"></i>
-                                    </a>
-
-                                    <a href="{{ route('memos.edit', $memo) }}" class="btn btn-icon">
-                                        <i class="ti ti-edit"></i>
-                                    </a>
-
-                                    <form action="{{ route('memos.destroy', $memo) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-
-                                        <button type="submit" class="btn btn-icon">
-                                            <i class="ti ti-trash"></i>
-                                        </button>
-                                    </form>
+                                    <x-components::crud.view :url="route('memos.show', $memo)" />
+                                    <x-components::crud.edit :url="route('memos.edit', $memo)" />
+                                    <x-components::crud.delete :url="route('memos.destroy', $memo)" />
                                 </div>
                             </td>
                         </tr>
